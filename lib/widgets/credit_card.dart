@@ -49,33 +49,36 @@ class CreditCard extends StatelessWidget {
                   flex: 1,
                   child: Container(
                     color: Color.fromARGB(255, 16, 80, 98),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          '\$10.250.00',
-                          style: TextStyle(
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text(
+                            '\$10.250.00',
+                            style: TextStyle(
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
                           ),
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            CircleAvatar(
-                              radius: 15,
-                              backgroundColor: Colors.white.withOpacity(0.8),
-                            ),
-                            Transform.translate(
-                                offset: const Offset(-10, 0),
-                                child: CircleAvatar(
-                                  radius: 15,
-                                  backgroundColor:
-                                      Colors.white.withOpacity(0.8),
-                                )),
-                          ],
-                        ),
-                      ],
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              CircleAvatar(
+                                radius: 15,
+                                backgroundColor: Colors.white.withOpacity(0.8),
+                              ),
+                              Transform.translate(
+                                  offset: const Offset(-10, 0),
+                                  child: CircleAvatar(
+                                    radius: 15,
+                                    backgroundColor:
+                                        Colors.white.withOpacity(0.8),
+                                  )),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   )),
             ],
