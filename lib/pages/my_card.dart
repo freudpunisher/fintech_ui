@@ -67,7 +67,7 @@ class BackCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200,
+      height: 228,
       decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(20)),
           color: Color.fromARGB(255, 14, 19, 29)),
