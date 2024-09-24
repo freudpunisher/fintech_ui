@@ -40,7 +40,9 @@ class ActivityPage extends StatelessWidget {
                               width: 340,
                               height: 75,
                               decoration: BoxDecoration(
-                                color: const Color.fromARGB(2555, 16, 80, 98),
+                                color: index % 2 == 0
+                                    ? const Color.fromARGB(2555, 16, 80, 98)
+                                    : Colors.black,
                                 borderRadius: BorderRadius.circular(20),
                               ),
                               child: Padding(
