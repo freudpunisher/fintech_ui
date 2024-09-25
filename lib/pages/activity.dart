@@ -17,13 +17,14 @@ class ActivityPage extends StatelessWidget {
           icon: const Icon(Icons.arrow_back_ios_new),
         ),
         title: const Center(
-          child:  Text(
+          child: Text(
             "Activity",
             style: TextStyle(fontWeight: FontWeight.w500),
           ),
         ),
         actions: [
-          IconButton.outlined(onPressed: () {}, icon: const Icon(Icons.more_horiz))
+          IconButton.outlined(
+              onPressed: () {}, icon: const Icon(Icons.more_horiz))
         ],
       ),
       body: SingleChildScrollView(
@@ -62,7 +63,7 @@ class ActivityPage extends StatelessWidget {
                                       style: TextStyle(
                                           fontSize: 14, color: Colors.grey),
                                     ),
-                                   const SizedBox(
+                                    const SizedBox(
                                       width: 8,
                                     ),
                                     Row(
@@ -90,7 +91,7 @@ class ActivityPage extends StatelessWidget {
                           )),
                 ),
               ),
-            const  SizedBox(
+              const SizedBox(
                 height: 25,
               ),
               Container(
@@ -111,35 +112,72 @@ class ActivityPage extends StatelessWidget {
                           fontWeight: FontWeight.w500,
                           color: Colors.grey),
                     ),
-                   const SizedBox(
+                    const SizedBox(
                       height: 4,
                     ),
-                  const  Text(
+                    const Text(
                       "\$ 45.99",
                       style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
                           color: Colors.black),
                     ),
-                   const SizedBox(
+                    const SizedBox(
                       height: 12,
                     ),
-                   const TimeOptionRow(),
-                   const SizedBox(height: 16),
-                    Expanded(child: LineChart(
+                    const TimeOptionRow(),
+                    const SizedBox(height: 16),
+                    Expanded(
+                        child: LineChart(
                       LineChartData(
-gridData: FlGridData(show: false),
-titlesData: FlTitlesData(leftTitles: AxisTitles( sideTitles: SideTitles(showTitles:false)),bottomTitles:AxisTitles(
-  sideTitles: SideTitles(showTitles:true,
-  getTitlesWidget: (value,meta){
-    const tiles = ['s','M','T', 'W','T', 'F'];
-    final value =
-  }
-) ),
-
-                      ),
-
-                      
+                          gridData: const FlGridData(show: false),
+                          titlesData: FlTitlesData(
+                            leftTitles: const AxisTitles(
+                                sideTitles: SideTitles(showTitles: false)),
+                            bottomTitles: AxisTitles(
+                              sideTitles: SideTitles(
+                                  showTitles: true,
+                                  getTitlesWidget: (value, meta) {
+                                    const tiles = ['S', 'M', 'T', 'W'];
+                                    final index = value.toInt();
+                                    if (index >= 0 && index < tiles.length) {
+                                      return Text(
+                                        tiles[index],
+                                        style:
+                                            const TextStyle(color: Colors.grey),
+                                      );
+                                    }
+                                    return const Text("");
+                                  },
+                                  reservedSize: 22,
+                                  interval: 1),
+                            ),
+                            rightTitles: const AxisTitles(
+                                sideTitles: SideTitles(
+                              showTitles: false,
+                            )),
+                            topTitles: const AxisTitles(
+                                sideTitles: SideTitles(
+                              showTitles: false,
+                            )),
+                          ),
+                          borderData: FlBorderData(show: false),
+                          lineBarsData: [
+                            LineChartBarData(
+                                spots: [
+                                  const FlSpot(0, 2),
+                                  const FlSpot(1, 1),
+                                  const FlSpot(2, 4),
+                                  const FlSpot(4, 3),
+                                  const FlSpot(5, 4),
+                                  const FlSpot(6, 6),
+                                ],
+                                isCurved: true,
+                                color: Colors.teal,
+                                barWidth: 3,
+                                dotData: const FlDotData(show: false),
+                                belowBarData: BarAreaData(show: true)),
+                          ]),
                     ))
                   ],
                 ),
